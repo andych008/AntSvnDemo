@@ -116,7 +116,7 @@
 
 	<!-- 合并zepto.min.js、touch.min.js、app.min.js为lottery.min.js -->
 	<target name="concat-js">
-		<echo level="info" message="正在合并zepto.min.js、touch.min.js、ghostclick.min.js、app.min.js为lottery.min.js ..." />
+		<echo level="info" message="正在合并zepto.min.js、touch.min.js、app.min.js为lottery.min.js ..." />
 		<concat encoding="${encode.js}" outputencoding="${encode.js}" destfile="${path.build.js}/common/lottery${suffix.js}">
 			<header trimleading="yes">${copyright.zepto}${copyright.ghostclick}</header>
 			<path path="${path.build.js}/common/zepto${suffix.js}" />
@@ -341,7 +341,7 @@
 
 	<!-- init -->
 	<target name="init">
-		<echo level="info" message="欢迎使用Apache Ant集成自动化工具：彩票WebApp版" />
+		<echo level="info" message="欢迎使用Apache Ant集成自动化工具" />
 		<echo level="info" message="----------------------------------------------" />
 		<echo level="info" message="请选择你要执行的操作：" />
 		<echo level="info" message="1、资源处理（压缩、合并、更新版本号）" />
@@ -353,7 +353,7 @@
 			<matches string="${options}" pattern="^[23]$" />
 			<ac:then>
 				<!-- SVN 处理 -->
-				<input addproperty="svn.commitMessage" message="请输入Commit Message（格式如：[lottery_UI_V3.0D01220] WebApp优化）：" />
+				<input addproperty="svn.commitMessage" message="请输入Commit Message（格式如：[xxx_v1.0] abcde）：" />
 
 				<!-- 提取SVN版本号 -->
 				<ac:propertyregex property="svn.version" override="true" casesensitive="true" global="true" input="${svn.commitMessage}" regexp="${svn.version-regexp}" select="\2" />
