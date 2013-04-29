@@ -5,7 +5,7 @@
 	<!-- SVN -->
 	<property name="svn.user" value="name" />
 	<property name="svn.password" value="password" />
-	<property name="svn.version-regexp" value=".*(\[(.+)\]).*" /> <!-- 版本号规则: [lottery_UI_V3.0D01220] xxx, \1用于规则匹配，\2用于生成zip -->
+	<property name="svn.version-regexp" value=".*(\[(.+)\]).*" /> <!-- 版本号规则: [xxx_v1.0] abcde, \1用于规则匹配，\2用于生成zip -->
 	<property name="svn.log-limit" value="100" /> <!-- SVN日志数上限 -->
 
 	<!-- encode设置 -->
