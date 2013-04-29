@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- basedir需要定位到根目录 -->
 <project name="lottery" default="build" basedir="../../" xmlns:ac="antlib:net.sf.antcontrib">
-  <description>Apache Ant以及SVN进行自动化构建</description>
+  <description>使用Apache Ant及SVN进行自动化构建</description>
 	<!-- SVN -->
 	<property name="svn.user" value="name" />
 	<property name="svn.password" value="password" />
@@ -33,7 +33,7 @@
 	<!-- 保留版权声明 -->
 	<property name="copyright.zepto" value="/* Zepto v1.0-1-ga3cab6c - polyfill zepto detect event ajax form fx - zeptojs.com/license */" />
 
-	<!-- yuicompressor程序路径(请保持同一项目使用相同版本及设置的yuicompressor,否则计算出的校验和会有差别) -->
+	<!-- yuicompressor程序路径(请保持同一项目使用相同版本及设置的yuicompressor,否则计算出的校验和可能会有差别) -->
 	<property name="path.yuicompressor" location="${ant.library.dir}/yuicompressor.jar" />
 
 	<!-- 项目根目录名称 -->
@@ -75,8 +75,6 @@
 			<fileset dir="${path.css}" excludes="**/${path.build.prefix}*/,**/*${suffix.css}" />
 		</copy>
 
-			<fileset dir="${path.app}" excludes="**/${path.build.prefix}*/" />
-		</copy> -->
 
 		<!-- 版本号 -->
 		<copy file="${path.version.tpl}" tofile="${path.build}/${ns.version}" overwrite="true" preservelastmodified="true" />
@@ -181,7 +179,7 @@
 		<copy file="${path.build}/${ns.version}" tofile="${path.version}" overwrite="true" />
 	</target>
 
-	<!-- 移除build临时目录 -->
+	<!-- 移除临时目录 -->
 	<target name="remove">
 		<echo level="info" message="正在移除临时目录..." />
 		<delete dir="${path.build}" />
@@ -218,7 +216,6 @@
 		<svn refid="svn.settings">
 			<update dir="${basedir}" revision="HEAD" />
 			<status path="${basedir}" textStatusProperty="svn.updateTextStatus" propStatusProperty="svn.updatePropStatus" />
-			<info target="${basedir}" />
 		</svn>
 
 		<!-- 获取SVN工作副本的基准路径 -->
