@@ -216,6 +216,7 @@
 		<svn refid="svn.settings">
 			<update dir="${basedir}" revision="HEAD" />
 			<status path="${basedir}" textStatusProperty="svn.updateTextStatus" propStatusProperty="svn.updatePropStatus" />
+			<info target="${basedir}" />
 		</svn>
 
 		<!-- 获取SVN工作副本的基准路径 -->
