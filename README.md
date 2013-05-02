@@ -1,7 +1,7 @@
 AntSvnDemo
 ==========
 
-使用Apache Ant以及SVN进行自动化构建
+使用Apache Ant及SVN进行自动化构建
 
 此Demo基于特定项目进行，不具有普遍适用性，仅供参考。
 
